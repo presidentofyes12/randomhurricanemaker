@@ -7,8 +7,8 @@ print(str(north)+" "+str(west) + " " + str(firstintensity))
 halfdone = length/2
 halfdone2 = 0
 for i in range(0, length):
-    print(halfdone2)
-    print(halfdone)
+    """print("Halfdone2: " + str(halfdone2))
+    print("Halfdone: " + str(halfdone))"""
     
     addnorth = str(random.randint(1, 2))
     addwest = str(random.randint(2, 3))
@@ -25,14 +25,14 @@ for i in range(0, length):
         addwest = str(int(int(addwest) - (int(addwest) * 2)))
     if halfdone2 < halfdone:
         if random.randint(0, 1) == 1:
-            pass
+            print(str(int(north) + int(addnorth)) + " " + str(int(west) + int(addwest)) + " " + str(int(firstintensity) + int(addstrength)))
+            firstintensity += int(addstrength)
         else:
-            addstrength = str(int(int(minusstrength) - (int(minusstrength) * 2)))
-    elif halfdone2 >= halfdone:
-        addstrength = -(int(addstrength) - random.randint(5,10))
-        #addstrength = str(-int(int(minusstrength) - (int(minusstrength) * 2)))
-    print(str(int(north) + int(addnorth)) + " " + str(int(west) + int(addwest)) + " " + str(int(firstintensity) + int(addstrength)))
+            print(str(int(north) + int(addnorth)) + " " + str(int(west) + int(addwest)) + " " + str(int(firstintensity) - int(addstrength)))
+            firstintensity -= int(addstrength)
+    elif halfdone2 >= round(halfdone):
+        print(str(int(north) + int(addnorth)) + " " + str(int(west) + int(addwest)) + " " + str(int(firstintensity) - int(addstrength)))
+        firstintensity -= int(addstrength)
     north += int(addnorth)
     west += int(addwest)
-    firstintensity += int(addstrength)
     halfdone2 += 1
