@@ -1,7 +1,8 @@
 import random
 north = random.randint(0, 42)
 west = random.randint(6, 97)
-length = random.randint(10, 15)
+#length = random.randint(10, 15)
+length = 8
 firstintensity = random.randint(30, 40)
 print(str(north)+" "+str(west) + " " + str(firstintensity))
 halfdone = length/2
@@ -18,11 +19,11 @@ for i in range(0, length):
     if random.randint(0, 1) == 1:
             pass
     else:
-        addnorth = str(int(int(addnorth) - (int(addnorth) * 2)))
+        addnorth = str(int(int(addnorth) - (int(addnorth) * 1.25)))
     if random.randint(0, 1) == 1:
         pass
     else:
-        addwest = str(int(int(addwest) - (int(addwest) * 2)))
+        addwest = str(int(int(addwest) - (int(addwest) * 1.25)))
     if halfdone2 < halfdone:
         if random.randint(0, 1) == 1:
             print(str(int(north) + int(addnorth)) + " " + str(int(west) + int(addwest)) + " " + str(int(firstintensity) + int(addstrength)))
